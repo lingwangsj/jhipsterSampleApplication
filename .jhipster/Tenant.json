@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "ownedVenue",
+            "otherEntityName": "venue",
+            "otherEntityRelationshipName": "tenant"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "ownedNetwork",
+            "otherEntityName": "network",
+            "otherEntityRelationshipName": "tenant"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "ownedTag",
+            "otherEntityName": "tag",
+            "otherEntityRelationshipName": "tenant"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tenantName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180116221052",
+    "entityTableName": "tenant",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

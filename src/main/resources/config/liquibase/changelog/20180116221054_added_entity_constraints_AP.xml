@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity AP.
+    -->
+    <changeSet id="20180116221054-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="aps_id"
+                                 baseTableName="ap_tags"
+                                 constraintName="fk_ap_tags_aps_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ap"/>
+        <addForeignKeyConstraint baseColumnNames="tags_id"
+                                 baseTableName="ap_tags"
+                                 constraintName="fk_ap_tags_tags_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"/>
+        
+        <addForeignKeyConstraint baseColumnNames="venue_id"
+                                 baseTableName="ap"
+                                 constraintName="fk_ap_venue_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="venue"/>
+
+    </changeSet>
+</databaseChangeLog>
