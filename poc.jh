@@ -1,0 +1,55 @@
+entity Tenant {
+	tenantName String required
+}
+
+entity Venue {
+	venueName String required
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity AP {
+	serialNumber String required,
+    apName String required
+}
+
+entity Network {
+	networkName String required,
+    ssid String required
+}
+
+entity APConfig {
+	name String required,
+	description String
+}
+
+entity Tag {
+	type String required,
+    id   String required,
+    label String
+}
+
+relationship ManyToMany {
+	AP{tags} to Tag{ap},
+    Network{tags} to Tag{network},
+    APConfig{tags} to Tag{apConfig}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Tenant{ownedVenue} to Venue{tenant},
+	Tenant{ownedNetwork} to Network{tenant},
+    Tenant{ownedTag} to Tag{tenant},
+    Venue{ownedAP} to AP{venue}
+}
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+//paginate Job with pagination
+
+//dto * with mapstruct
+
+// Set service options to all except few
+filter *
+// Set an angular suffix
+angularSuffix * with mySuffix

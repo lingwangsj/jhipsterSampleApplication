@@ -42,6 +42,22 @@ public class CacheConfiguration {
             cm.createCache(io.github.jhipster.application.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Tenant.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Tenant.class.getName() + ".ownedVenues", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Tenant.class.getName() + ".ownedNetworks", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Tenant.class.getName() + ".ownedTags", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Venue.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Venue.class.getName() + ".ownedAPS", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AP.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AP.class.getName() + ".tags", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Network.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Network.class.getName() + ".tags", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.APConfig.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.APConfig.class.getName() + ".tags", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Tag.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Tag.class.getName() + ".aps", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Tag.class.getName() + ".networks", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Tag.class.getName() + ".apConfigs", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
