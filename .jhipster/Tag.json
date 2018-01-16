@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tenant",
+            "otherEntityName": "tenant",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "ap",
+            "otherEntityName": "aP",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "tags"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "network",
+            "otherEntityName": "network",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "tags"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "apConfig",
+            "otherEntityName": "aPConfig",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "tags"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "label",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180116221057",
+    "entityTableName": "tag",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

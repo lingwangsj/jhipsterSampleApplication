@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Network.
+    -->
+    <changeSet id="20180116221055-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="networks_id"
+                                 baseTableName="network_tags"
+                                 constraintName="fk_network_tags_networks_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="network"/>
+        <addForeignKeyConstraint baseColumnNames="tags_id"
+                                 baseTableName="network_tags"
+                                 constraintName="fk_network_tags_tags_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"/>
+        
+        <addForeignKeyConstraint baseColumnNames="tenant_id"
+                                 baseTableName="network"
+                                 constraintName="fk_network_tenant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tenant"/>
+
+    </changeSet>
+</databaseChangeLog>

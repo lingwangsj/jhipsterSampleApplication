@@ -1,0 +1,42 @@
+
+<div *ngIf="network">
+    <h2><span>Network</span> {{network.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Network Name</span></dt>
+        <dd>
+            <span>{{network.networkName}}</span>
+        </dd>
+        <dt><span>Ssid</span></dt>
+        <dd>
+            <span>{{network.ssid}}</span>
+        </dd>
+        <dt><span>Tags</span></dt>
+        <dd>
+            <span *ngFor="let tags of network.tags; let last = last">
+                <a [routerLink]="['/tag-my-suffix', tags?.id ]">{{tags.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span>Tenant</span></dt>
+        <dd>
+            <div *ngIf="network.tenantId">
+                <a [routerLink]="['/tenant-my-suffix', network.tenantId]">{{network.tenantId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'network-my-suffix/'+ network.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
